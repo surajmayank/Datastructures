@@ -15,12 +15,6 @@ public class QuickShort {
     }
 
     private int partition(int [] arr , int low , int high){
-
-
-        Quick q = new Quick();
-        q.setName("rahul");
-        System.out.println(q.getName());
-
         int pivote = arr[(low+high)/2];
         while(low<=high){
             while(arr[low]<pivote){

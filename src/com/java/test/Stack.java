@@ -1,52 +1,51 @@
-package com.java.streamapi;
+package com.java.test;
 
 public class Stack {
-
     int top;
-    int [] arr;
+    int[] arr;
     int capacity;
 
-    public Stack(int size){
-        this.top=-1;
+    public Stack(int size) {
+        this.top = -1;
         arr = new int[size];
-        capacity=size;
-    }
-
-    public void push(int elelement){
-        if(isFull()){
-            System.out.println("stack will overflow");
-            System.exit(1);
-        }
-        arr[++top]=elelement;
-    }
-    public int  pop(){
-        if(isEmpty()){
-            System.out.println("stack will underflow");
-            System.exit(1);
-        }
-        System.out.println("Removing "+peek());
-        return arr[top--];
-    }
-
-    public int peek() {
-        if(!isEmpty()){
-           return arr[top];
-        }
-        else
-            System.exit(-1);
-        return -1;
+        this.capacity = size;
     }
 
     public boolean isEmpty() {
-        return size()==0;
-    }
-    private boolean isFull() {
-        return size()==capacity;
-    }
-    public int size() {
-        return top+1;
+        return size() == 0;
     }
 
+    private int size() {
+        return top + 1;
+    }
+
+    public boolean isFull() {
+        return capacity == size();
+    }
+
+    public void push(int data){
+        if(isFull()){
+            System.out.println("Stack is Overflow");
+            System.exit(1);
+        }
+        arr[++top]=data;
+    }
+    public int pop(){
+        if(isEmpty()){
+            System.out.println("Stack is Underflow");
+            System.exit(1);
+        }
+        System.out.println("Removing value " + peek());
+       return arr[top--];
+    }
+
+    private int peek() {
+        if(isEmpty()){
+            System.out.println("no value to remove");
+            System.exit(1);
+        }
+        return arr[top];
+    }
     public static void main (String[] args)
     {
         Stack stack = new Stack(3);

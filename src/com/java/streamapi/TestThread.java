@@ -23,5 +23,11 @@ public class TestThread {
             service.execute(th);
          System.out.println("executor Thread"+Thread.currentThread().getName());
         }
+
+        for(int i=0;i<10;i++){
+            service.submit(() -> {
+
+            });
+        }
     }
 }

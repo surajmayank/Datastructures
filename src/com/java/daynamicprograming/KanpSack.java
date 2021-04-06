@@ -1,6 +1,4 @@
-package com.java.test;
-
-import java.util.Arrays;
+package com.java.daynamicprograming;
 
 public class KanpSack {
 
